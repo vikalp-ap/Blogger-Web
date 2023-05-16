@@ -12,6 +12,8 @@ builder.Services.AddDbContext<BlogDbContext>(options => options.UseNpgsql(builde
 
 //implementation for repository.
 builder.Services.AddScoped<ITagRepository, TagRepository>();
+builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository>();
+
 
 var app = builder.Build();
 

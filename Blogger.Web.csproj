@@ -14,6 +14,7 @@
     <None Remove="Views\AdminTags\" />
     <None Remove="Models\ViewModels\" />
     <None Remove="Repositories\" />
+    <None Remove="Views\AdminBlogPosts\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Domain\" />
@@ -21,6 +22,7 @@
     <Folder Include="Views\AdminTags\" />
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Repositories\" />
+    <Folder Include="Views\AdminBlogPosts\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">

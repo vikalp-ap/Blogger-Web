@@ -1,7 +1,9 @@
 ﻿using System;
-namespace Blogger.Web.Models.Domain
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace Blogger.Web.Models.ViewModels
 {
-    public class BlogPost
+    public class AddBlogPostsRequest
     {
         public Guid Id { get; set; }
         public string Heading { get; set; }
@@ -13,7 +15,9 @@ namespace Blogger.Web.Models.Domain
         public string Author { get; set; }
         public DateTime PublishedDate { get; set; }
         public bool Visible { get; set; }
-        //navigation property
-        public ICollection<Tag> Tags { get; set; }
+        //Display Tags
+        public IEnumerable<SelectListItem> Tags { get; set; }
+        //Collect tag
+        public string[] SelectedTags { get; set; } = Array.Empty<string>();
     }
 }
