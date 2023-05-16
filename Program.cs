@@ -1,4 +1,5 @@
 ﻿using Blogger.Web.Data;
+using Blogger.Web.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
@@ -8,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BlogDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("key")));
+
+//implementation for repository.
+builder.Services.AddScoped<ITagRepository, TagRepository>();
 
 var app = builder.Build();
 
