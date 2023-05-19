@@ -18,7 +18,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Id</label>
-                <input type="text" class="form-control" id="id" asp-for="Id" readonly/>
+                <input type="text" class="form-control" id="id" asp-for="Id" readonly />
             </div>
 
             <div class="mb-3">
@@ -80,6 +80,9 @@
                 <button type="submit" class="btn btn-dark">
                     Update
                 </button>
+                <button type="submit" class="btn btn-danger" asp-area="" asp-controller="AdminBlogPosts" asp-action="Delete">
+                    Delete
+                </button>
             </div>
 
         </form>
@@ -90,3 +93,6 @@
     }
 </div>
 
+@section Scripts {
+    <script>var editor = new FroalaEditor('#content');</script>
+}

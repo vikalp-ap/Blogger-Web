@@ -13,6 +13,7 @@ namespace Blogger.Web.Repositories
         {
             this.blogDbContext = blogDbContext;
         }
+
         public async Task<BlogPost> AddAsync(BlogPost blogPost)
         {
             await blogDbContext.AddAsync(blogPost);
@@ -23,7 +24,15 @@ namespace Blogger.Web.Repositories
 
         public async Task<BlogPost?> DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var existingBlog = await blogDbContext.BlogPosts.FindAsync(id);
+            if (existingBlog != null)
+            {
+                blogDbContext.BlogPosts.Remove(existingBlog);
+                await blogDbContext.SaveChangesAsync();
+                return existingBlog;
+            }
+            return null;
+            //throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<BlogPost>> GetAllAsync()
