@@ -10,5 +10,6 @@ namespace Blogger.Web.Repositories
         Task<BlogPost?> DeleteAsync(Guid id);
         Task<BlogPost?> UpdateAsync(BlogPost blogPost);
         Task<BlogPost> AddAsync(BlogPost blogPost);
+        Task<BlogPost?> GetByUrlHandleAsync(string urlHandle);
     }
 }

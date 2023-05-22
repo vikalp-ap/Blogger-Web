@@ -47,6 +47,11 @@ namespace Blogger.Web.Repositories
             //throw new NotImplementedException();
         }
 
+        public async Task<BlogPost?> GetByUrlHandleAsync(string urlHandle)
+        {
+            return await blogDbContext.BlogPosts.Include(x => x.Tags).FirstOrDefaultAsync(x => x.UrlHandle == urlHandle);
+        }
+
         public async Task<BlogPost?> UpdateAsync(BlogPost blogPost)
         {
             var existingBlog = await blogDbContext.BlogPosts.Include(x => x.Tags)
