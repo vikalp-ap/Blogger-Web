@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Blogger.Web.Models.ViewModels;
 using Blogger.Web.Models.Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Blogger.Web.Repositories;
 
 namespace Blogger.Web.Controllers

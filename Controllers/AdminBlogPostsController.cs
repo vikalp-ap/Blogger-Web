@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Blogger.Web.Models.Domain;
 using Blogger.Web.Models.ViewModels;
 using Blogger.Web.Repositories;
